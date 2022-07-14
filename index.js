@@ -37,11 +37,16 @@ async function fetchData() {
 const displayData = (data) => {
     let { Search } = data
     for (let x of Search) {
-        var imgBox = document.createElement("div");
+        let { Poster, Title, Year } = x
+        var mainDiv = document.createElement("div");
+        var div1 = document.createElement("div");
+        var div2 = document.createElement("div");
         let img = document.createElement("img")
-        img.src = x.Poster
-        imgBox.append(img)
-        productBox.append(imgBox)
+        img.src = Poster
+        div1.append(img)
+        div2.innerHTML = `${Title} | | (${Year})`;
+        mainDiv.append(div1, div2)
+        productBox.append(mainDiv)
     }
 
 }
