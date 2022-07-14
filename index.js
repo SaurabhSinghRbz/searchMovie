@@ -1,6 +1,6 @@
 var productBox = document.getElementById("productBox").innerText;
 var heightOfProductBox = document.getElementById("productBox").clientHeight;
-if (heightOfProductBox < 1000) {
+if (heightOfProductBox < 500) {
     document.getElementById("container").style.height = "100%"
 }
 var myApiKey = "56d15062";
