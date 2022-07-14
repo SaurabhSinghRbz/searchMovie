@@ -6,7 +6,8 @@ if (heightOfProductBox < 500) {
 var myApiKey = "56d15062";
 async function fetchData() {
     try {
-        let url = `http://www.omdbapi.com/?apikey=${myApiKey}&t=Beast`
+        var searchName = document.getElementById("search").value;
+        let url = `http://www.omdbapi.com/?apikey=${myApiKey}&s=${searchName}`
         let response = await fetch(url)
         let data = await response.json();
         console.log(data)
@@ -15,4 +16,3 @@ async function fetchData() {
         console.log("unable to fetch data");
     }
 }
-fetchData();

@@ -138,8 +138,37 @@ button:hover {
     /* drop shadow 2 */
 }
 
+@media all and (min-width: 750px) and (max-width: 1000px) {
+    #navBar {
+        width: 90%;
+        grid-template-columns: 30% 70%;
+    }
 
+    button {
+        margin-left: 2%;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        font-size: 20px;
+        padding: 8% 20%;
+        border-radius: 40px;
+        background-color: red;
+    }
 
+    input {
+        padding: 0px 20px;
+        font-size: 15px;
+        height: 100%;
+        width: 100%;
+        border: 2px solid white;
+        background-color: #0f0f0f;
+        border-radius: 25px;
+        color: white;
+        background-image: url('./Images/search_icon.svg');
+        background-repeat: no-repeat;
+        background-position: 95%;
+    }
+}
 
 /* productBox styling starts from here ---> */
 #paraBox {
