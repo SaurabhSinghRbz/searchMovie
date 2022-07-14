@@ -9,10 +9,12 @@
     background-image: url('./Images/background.jpg');
     background-repeat: repeat;
     background-size: 100%;
-    height: auto;
+    /* height: 100%; */
     width: 100%;
     background-color: #0f0f0f;
     padding-bottom: 5%;
+    min-height: 100%;
+    max-height: auto;
 }
 
 

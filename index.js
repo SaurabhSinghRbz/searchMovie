@@ -1,18 +1,47 @@
-var productBox = document.getElementById("productBox").innerText;
-var heightOfProductBox = document.getElementById("productBox").clientHeight;
-if (heightOfProductBox < 500) {
-    document.getElementById("container").style.height = "100%"
-}
-var myApiKey = "56d15062";
+var productBox = document.getElementById("productBox");
+const myApiKey = "56d15062";
 async function fetchData() {
     try {
-        var searchName = document.getElementById("search").value;
+        productBox.innerHTML = ""
+        let searchName = document.getElementById("search").value;
         let url = `http://www.omdbapi.com/?apikey=${myApiKey}&s=${searchName}`
         let response = await fetch(url)
         let data = await response.json();
+        // console.log(data.Poster)
         console.log(data)
-        return data
+        const { totalResults } = data
+        let paraBox = document.getElementById("paraBox")
+        if (searchName == "") {
+            alert("Please type a movie name in search box.")
+        } else {
+            paraBox.style.color = "white"
+            paraBox.style.fontSize = "35px"
+            if (totalResults !== undefined) {
+                paraBox.innerHTML = `We found😃 ${totalResults} results related to "${searchName}" keyword.....`
+                displayData(data)
+            } else {
+                paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword`
+                let h2Box = document.createElement("p")
+                h2Box.textContent = "404 - File or directory not found."
+                let h3Box = document.createElement("p")
+                h3Box.textContent = "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+                // paraBox.append(h2Box, h3Box)
+            }
+        }
     } catch (error) {
         console.log("unable to fetch data");
     }
+}
+
+
+const displayData = (data) => {
+    let { Search } = data
+    for (let x of Search) {
+        var imgBox = document.createElement("div");
+        let img = document.createElement("img")
+        img.src = x.Poster
+        imgBox.append(img)
+        productBox.append(imgBox)
+    }
+
 }
