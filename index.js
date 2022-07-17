@@ -7,7 +7,6 @@ async function fetchData() {
         let url = `http://www.omdbapi.com/?apikey=${myApiKey}&s=${searchName}`
         let response = await fetch(url)
         let data = await response.json();
-        // console.log(data.Poster)
         console.log(data)
         const { totalResults } = data
         let paraBox = document.getElementById("paraBox")
@@ -20,7 +19,7 @@ async function fetchData() {
                 paraBox.innerHTML = `We found😃 ${totalResults} results related to "${searchName}" keyword.....`
                 displayData(data)
             } else {
-                paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword`
+                paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword.....`
                 let h2Box = document.createElement("p")
                 h2Box.textContent = "404 - File or directory not found."
                 let h3Box = document.createElement("p")
@@ -48,5 +47,4 @@ const displayData = (data) => {
         mainDiv.append(div1, div2)
         productBox.append(mainDiv)
     }
-
 }
