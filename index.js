@@ -36,7 +36,7 @@ async function fetchData() {
 const displayData = (data) => {
     let { Search } = data
     for (let x of Search) {
-        let { Poster, Title, Year } = x
+        let { Poster, Title, Year, imdbID } = x
         var mainDiv = document.createElement("div");
         var div1 = document.createElement("div");
         var div2 = document.createElement("div");
@@ -45,6 +45,9 @@ const displayData = (data) => {
         div1.append(img)
         div2.innerHTML = `${Title} | | (${Year})`;
         mainDiv.append(div1, div2)
+        mainDiv.addEventListener("click", () => {
+            window.location.href = `./Pages/Details/detail.html?title=${Title}&imdbID=${imdbID}`
+        })
         productBox.append(mainDiv)
     }
 }
