@@ -1,0 +1,371 @@
+* {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#container {
+    background-image: url(../../Images/background.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    /* height: 100%; */
+    width: 100%;
+    background-color: #0f0f0f;
+    padding-bottom: 5%;
+    min-height: 100%;
+    max-height: auto;
+}
+
+
+#navBar {
+    height: 20%;
+    width: 80%;
+    background-color: rgb(90, 90, 90);
+    margin: auto;
+    border-radius: 0 0 10px 10px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 2%;
+}
+
+#navBar img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+
+
+#navBar>div {
+    height: 50px;
+}
+
+#navBar>:last-child {
+    display: grid;
+    grid-template-columns: 65% 20%;
+    justify-content: space-around;
+}
+
+input {
+    padding: 0px 20px;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    border: 2px solid white;
+    background-color: #0f0f0f;
+    border-radius: 30px;
+    color: white;
+    background-image: url('../../Images/search_icon.svg');
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+input::placeholder {
+    font-size: 20px;
+    color: lightgrey;
+    /* padding-left: 20px; */
+}
+
+input:focus {
+    background-image: none;
+}
+
+input:hover {
+    background-position: 93%;
+
+    cursor: pointer;
+    transform: scale(1.02);
+    box-shadow:
+        inset 0 -5px 20px hsla(0, 0%, 0%, 0.4),
+        /* top light */
+        inset 0 5px 20px hsla(0, 0%, 100%, 0.4),
+        /* bottom shadow */
+        /* multiple light sources yall */
+        -12px 12px 5px hsla(0, 0%, 0%, 0.15),
+        /* drop shadow 1 */
+        10px 25px 10px hsla(0, 0%, 0%, 0.2);
+}
+
+button {
+    margin-left: 8%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+
+    position: relative;
+    background-color: #AAA;
+    background-image: linear-gradient(
+            /* chrome */
+            hsla(0, 0%, 100%, 0.6), hsla(0, 0%, 100%, 0) 50%,
+            hsla(0, 0%, 0%, 0.3) 50%, hsla(0, 0%, 100%, 0.2));
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 10% 30%;
+    text-shadow:
+        0 0 15px hsla(0, 0%, 100%, 1),
+        /* bloom */
+        0 2px 4px hsla(0, 0%, 0%, 0.7);
+    /* drop shadow */
+    border: none;
+    border-radius: 50px;
+    /* margin: 10px; */
+    box-shadow:
+        inset 0 -5px 20px hsla(0, 0%, 0%, 0.4),
+        /* top light */
+        inset 0 5px 20px hsla(0, 0%, 100%, 0.4),
+        /* bottom shadow */
+        /* multiple light sources yall */
+        -8px 8px 5px hsla(0, 0%, 0%, 0.15),
+        /* drop shadow 1 */
+        5px 18px 10px hsla(0, 0%, 0%, 0.2);
+    /* drop shadow 2 */
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    background-color: red;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow:
+        inset 0 -5px 20px hsla(0, 0%, 0%, 0.4),
+        /* top light */
+        inset 0 5px 20px hsla(0, 0%, 100%, 0.4),
+        /* bottom shadow */
+        /* multiple light sources yall */
+        -12px 12px 5px hsla(0, 0%, 0%, 0.15),
+        /* drop shadow 1 */
+        10px 25px 10px hsla(0, 0%, 0%, 0.2);
+    /* drop shadow 2 */
+}
+
+@media all and (min-width: 750px) and (max-width: 1000px) {
+    #navBar {
+        width: 90%;
+        grid-template-columns: 30% 70%;
+    }
+
+    button {
+        margin-left: 2%;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        font-size: 20px;
+        padding: 8% 20%;
+        border-radius: 40px;
+        background-color: red;
+    }
+
+    input {
+        padding: 0px 20px;
+        font-size: 15px;
+        height: 100%;
+        width: 100%;
+        border: 2px solid white;
+        background-color: #0f0f0f;
+        border-radius: 25px;
+        color: white;
+        background-image: url('../../Images/search_icon.svg');
+        background-repeat: no-repeat;
+        background-position: 95%;
+    }
+}
+
+/* productBox styling starts from here ---> */
+#paraBox {
+    margin: 2% 10%;
+    font-size: 50px;
+    color: grey;
+}
+
+
+#productBox {
+    display: grid;
+    margin: 20px 12%;
+    grid-template-columns: 30% 70%;
+    gap: 40px;
+}
+
+#productBox>div {
+    min-height: 400px;
+    max-height: auto;
+    border-radius: 25px;
+    border: 3px solid black;
+    background-color: rgba(0, 0, 0, 0.685);
+}
+
+#productBox>div>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+}
+
+#detailsBox {
+    padding: 15px 20px;
+}
+
+#titltBox {
+    padding-bottom: 15px;
+    border-bottom: 1px solid grey;
+}
+
+#titltBox>div {
+    position: absolute;
+    top: 5px;
+    left: 81%;
+    background-color: yellow;
+    padding: 5px 10px;
+    border-radius: 100%;
+    color: black;
+    font-weight: bold;
+}
+
+h2>span {
+    font-size: 13px;
+    text-align: end;
+}
+
+#desBox>div {
+    height: auto;
+    display: grid;
+    grid-template-columns: 15% 75%;
+    /* border-bottom: 1px solid grey; */
+
+    /* gap: 5px; */
+}
+
+#desBox>div>:first-child {
+    padding: 10px 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    height: 80px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid green; */
+    background-image: url(../../Images/starIcon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 6vmax;
+}
+
+#desBox>div>:last-child {
+    height: 80px;
+    width: 100%;
+    /* border: 1px solid red; */
+    padding: 10px;
+}
+
+
+
+
+#productBox {
+    font-size: 15px;
+}
+
+#desBox>div>div>p,
+#peopleBox>p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#desBox span,
+#peopleBox span {
+    line-height: 22px;
+    font-weight: lighter;
+}
+
+#desBox>p {
+    padding-bottom: 10px;
+    line-height: 25px;
+    border-bottom: 1px solid grey;
+}
+
+
+#peopleBox {
+    padding: 10px 0px;
+}
+
+#productBox>:first-child:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+#productBox>:last-child:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.4s;
+
+}
+
+.glow-on-hover {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.685);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 25px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

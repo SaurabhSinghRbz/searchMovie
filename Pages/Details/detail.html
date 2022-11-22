@@ -1,18 +1,69 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="detail.css">
-    <title>Movie Detail - Page</title>
+    <title>MoviesVerse | Movies Verse - Search any movie</title>
+    <link rel="stylesheet" href="./detail.css">
     <link rel="icon" href="../../Images/ic.png">
 </head>
 
 <body>
-    <h1>Movie Details</h1>
+    <div id="container">
+        <div id="navBar">
+            <div><a href="../../index.html"><img src="../../Images/titleicon.png" alt=""></a></div>
+            <div>
+                <div>
+                    <form>
+                        <input type="search" name="s" id="search" value="" placeholder="What are you looking for?"
+                            autocomplete="off">
+                    </form>
+                </div>
+                <div>
+                    <button id="serchButton" onclick="fetchData()">Search</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="paraBox">Search a movie to see datails........</div>
+
+        <div id="productBox">
+            <!-- this is used for css -->
+            <!-- <div id="imgBox" class="glow-on-hover"><img src="./Images/found.jpg" alt="Poster"></div>
+            <div id="detailsBox" class="glow-on-hover">
+                <div id="titltBox">
+                    <h2>Game Of Thrones <span>(2022)</span></h2>
+                    <p>112 min | Action, Crime, Thriller | 21 Jun 2022</p>
+                    <div>Recommended</div>
+                </div>
+                <div id="desBox">
+                    <div>
+                        <div>4.3</div>
+                        <div>
+                            <p><span>Rating: </span>4.3/10 from 10000 users</p>
+                            <p><span>Type: </span>4.3/10 from 10000 users</p>
+                            <p><span>Metascore: </span>4.3/10 from 10000 users</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit consectetur rerum
+                        accusantium tenetur debitis magni aliquam dolores cupiditate pariatur quod consequatur, amet
+                        tempore repellat quis. Dolores temporibus tempore ea mollitia.</p>
+                </div>
+                <div id="peopleBox">
+                    <p><span>Language: </span></p>
+                    <p><span>Country: </span></p>
+                    <p><span>Director: </span></p>
+                    <p><span>Awards: </span></p>
+                    <p><span>Writer: </span></p>
+                    <p><span>Actors: </span></p>
+
+                </div>
+            </div> -->
+        </div>
+    </div>
 </body>
-<script src="detail.js"></script>
+<script src="./detail.js"></script>
 
 </html>
