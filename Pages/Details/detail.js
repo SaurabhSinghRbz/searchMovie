@@ -10,7 +10,7 @@ async function fetchData() {
     try {
         productBox.innerHTML = ""
         let searchName = document.getElementById("search").value;
-        let url = `http://www.omdbapi.com/?apikey=${myApiKey}&t=${searchName}`
+        let url = `http://www.omdbapi.com/?apikey=${myApiKey}&i=${imdbID}`
         let res = await fetch(url)
         let data = await res.json();
         console.log(data)
@@ -20,23 +20,22 @@ async function fetchData() {
     }
 }
 
+fetchData();
+
 const isFound = (data) => {
     let searchName = document.getElementById("search").value;
     const { Title } = data
-    if (searchName == "") {
-        alert("Please type a movie name in search box.")
+    if (Title === undefined) {
+        document.getElementById("container").style.backgroundImage = "url('../../Images/notFound.jpg')";
+        paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword.....`
+        // document.getElementById("paraBox").style.color = "black"
     } else {
-        if (Title === undefined) {
-            document.getElementById("container").style.backgroundImage = "url('../../Images/notFound.jpg')";
-            paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword.....`
-            // document.getElementById("paraBox").style.color = "black"
-        } else {
-            document.getElementById("container").style.backgroundImage = "url('../../Images/background.jpg')";
-            paraBox.innerHTML = `Showing😃 result for : "${searchName}".....`
-            displayData(data)
-        }
+        document.getElementById("container").style.backgroundImage = "url('../../Images/background.jpg')";
+        paraBox.innerHTML = `Showing😃 result for : "${title}".....`
+        displayData(data)
     }
 }
+
 
 const displayData = (data) => {
     let { Poster, Title, Year, Runtime, Genre, Released, imdbRating, imdbVotes, Type, Metascore, Plot, Language, Country, Director, Writer, Awards, Actors } = data
