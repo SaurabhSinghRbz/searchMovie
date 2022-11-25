@@ -8,12 +8,10 @@ var productBox = document.getElementById("productBox");
 const myApiKey = "56d15062";
 async function fetchData() {
     try {
-        productBox.innerHTML = ""
-        let searchName = document.getElementById("search").value;
+        productBox.innerHTML = "";
         let url = `http://www.omdbapi.com/?apikey=${myApiKey}&i=${imdbID}`
         let res = await fetch(url)
         let data = await res.json();
-        console.log(data)
         isFound(data);
     } catch (error) {
         console.log("unable to fetch data");
@@ -23,7 +21,7 @@ async function fetchData() {
 fetchData();
 
 const isFound = (data) => {
-    let searchName = document.getElementById("search").value;
+    let searchName = title;
     const { Title } = data
     if (Title === undefined) {
         document.getElementById("container").style.backgroundImage = "url('../../Images/notFound.jpg')";
@@ -31,7 +29,7 @@ const isFound = (data) => {
         // document.getElementById("paraBox").style.color = "black"
     } else {
         document.getElementById("container").style.backgroundImage = "url('../../Images/background.jpg')";
-        paraBox.innerHTML = `Showing😃 result for : "${title}".....`
+        paraBox.innerHTML = `Showing😃 Details of : "${title}".....`
         displayData(data)
     }
 }

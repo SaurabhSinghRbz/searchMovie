@@ -19,16 +19,14 @@
 
 
 #navBar {
-    height: 20%;
+    height: 10%;
     width: 80%;
     background-color: rgb(90, 90, 90);
     margin: auto;
     border-radius: 0 0 10px 10px;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    padding: 0% 2%;
+    align-items: center;
 }
 
 #navBar img:hover {
