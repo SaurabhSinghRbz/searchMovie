@@ -21,11 +21,6 @@ async function fetchData() {
 fetchData();
 
 const isFound = (data) => {
-    // if (Title === undefined) {
-    //     document.getElementById("container").style.backgroundImage = "url('../../Images/notFound.jpg')";
-    //     paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword.....`
-    //     // document.getElementById("paraBox").style.color = "black"
-    // } else {
     document.getElementById("container").style.backgroundImage = "url('../../Images/background.jpg')";
     paraBox.innerHTML = `Showing😃 Details of : "${title}".....`
     displayData(data)

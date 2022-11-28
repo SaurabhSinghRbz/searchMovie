@@ -19,12 +19,8 @@ async function fetchData() {
                 paraBox.innerHTML = `We found😃 ${totalResults} results related to "${searchName}" keyword.....`
                 displayData(data)
             } else {
+                document.getElementById("container").style.backgroundImage = "url('../../Images/notFound.jpg')";
                 paraBox.innerHTML = `Sorry!☹️ We haven't found any result related to "${searchName}" keyword.....`
-                let h2Box = document.createElement("p")
-                h2Box.textContent = "404 - File or directory not found."
-                let h3Box = document.createElement("p")
-                h3Box.textContent = "The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable."
-                // paraBox.append(h2Box, h3Box)
             }
         }
     } catch (error) {
